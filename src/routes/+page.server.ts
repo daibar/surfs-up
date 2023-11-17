@@ -7,7 +7,7 @@ const client = axios.create({
 	headers: { Authorization: STORMGLASS_API_KEY }
 });
 
-export const load = async ({ params }) => {
+export const load = async ({ fetch, params }) => {
 	const response = (await client.get('')) as AxiosResponse;
 	const swellTrace = buildSwellChartTimeseries(response.data);
 	return { trace: swellTrace };

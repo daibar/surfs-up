@@ -9,10 +9,17 @@
 		NavBrand,
 		NavHamburger,
 		Button,
-		Input
+		Input,
+		Dropdown,
+		DropdownItem,
+		DropdownDivider,
+		DropdownHeader
 	} from 'flowbite-svelte';
-	import { SearchOutline } from 'flowbite-svelte-icons';
+	import { ChevronDownSolid, SearchOutline } from 'flowbite-svelte-icons';
 	import { sineIn } from 'svelte/easing';
+	import type { LayoutData, PageData } from './$types';
+	export let data: LayoutData;
+	console.log(data)
 	let transitionParams = {
 		x: -320,
 		duration: 200,
@@ -28,16 +35,23 @@
 	let divClass = 'w-full md:block md:w-auto pr-8';
 	let ulClass =
 		'flex flex-col flex-row-reverse p-4 mt-4 md:flex-row-reverse md:space-x-8 md:mt-0 md:text-lg md:font-medium';
+	let activeClass =
+		'text-green-700 dark:text-green-300 hover:text-green-900 dark:hover:text-green-500';
 </script>
 
 <header>
 	<div class="flex md:order-2">
 		<Navbar>
 			<div class="hidden relative md:block">
-				<div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-					<SearchOutline class="w-4 h-4" />
-				</div>
-				<Input id="search-navbar" class="pl-10" placeholder="Search..." />
+				<Button {activeClass}
+					>Spots<ChevronDownSolid class="w-3 h-3 ml-2 text-white dark:text-white" /></Button
+				>
+				<Dropdown>
+					{#each data.spots as { name }}
+						<DropdownItem href="/">{name}</DropdownItem>
+					{/each}
+				</Dropdown>
+				<div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none" />
 			</div>
 			<NavUl {divClass} {ulClass}>
 				<NavLi href="https://github.com/daibar/surfs-up">GitHub</NavLi>
