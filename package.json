@@ -17,7 +17,7 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"prisma": {
-		"seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+		"seed": "ts-node --esm prisma/seed.ts"
 	  },
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
