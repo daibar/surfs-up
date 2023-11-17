@@ -1,6 +1,5 @@
 # Surf's Up Data Visualization
 
-
 ## Installation
 
 ```bash
@@ -14,7 +13,7 @@ pnpm update
 ## Configure StormGlass API Key
 
 1. Register for a free stormglass.io API Key:
-https://dashboard.stormglass.io/register
+   https://dashboard.stormglass.io/register
 
 2. Add a `.env` file in the root directory with the following
 
@@ -22,6 +21,7 @@ https://dashboard.stormglass.io/register
 STORMGLASSIO_API_KEY = "KEY GOES HERE"
 
 ```
+
 ## Starting a local server
 
 ```bash

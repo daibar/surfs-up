@@ -1,7 +1,7 @@
 <script>
 	import { Chart, Card, A, Button, Dropdown, DropdownItem } from 'flowbite-svelte';
 
-  export let data
+	export let data;
 
 	let options = {
 		chart: {
@@ -54,7 +54,7 @@
 			}
 		],
 		xaxis: {
-      show: true,
+			show: true,
 			labels: {
 				show: true
 			},
@@ -71,15 +71,14 @@
 	};
 </script>
 
-	<div class="flex justify-between">
-		<div>
-			<h5 class="leading-none text-3xl font-bold text-gray-900 dark:text-white pb-2">
-				Swell Height (La Jolla)
-			</h5>
-		</div>
+<div class="flex justify-between">
+	<div>
+		<h5 class="leading-none text-3xl font-bold text-gray-900 dark:text-white pb-2">
+			Swell Height (La Jolla)
+		</h5>
 	</div>
-	<Chart {options} />
-	<div
-		class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between"
-	>
-	</div>
+</div>
+<Chart {options} />
+<div
+	class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between"
+/>

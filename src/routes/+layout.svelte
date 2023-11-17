@@ -1,7 +1,16 @@
 <script lang="ts">
 	import '../app.postcss';
 	import { onMount } from 'svelte';
-	import { DarkMode, Navbar, NavLi, NavUl, NavBrand, NavHamburger, Button, Input } from 'flowbite-svelte';
+	import {
+		DarkMode,
+		Navbar,
+		NavLi,
+		NavUl,
+		NavBrand,
+		NavHamburger,
+		Button,
+		Input
+	} from 'flowbite-svelte';
 	import { SearchOutline } from 'flowbite-svelte-icons';
 	import { sineIn } from 'svelte/easing';
 	let transitionParams = {
