@@ -19,7 +19,6 @@
 	import { sineIn } from 'svelte/easing';
 	import type { LayoutData, PageData } from './$types';
 	export let data: LayoutData;
-	console.log(data)
 	let transitionParams = {
 		x: -320,
 		duration: 200,
@@ -47,9 +46,10 @@
 					>Spots<ChevronDownSolid class="w-3 h-3 ml-2 text-white dark:text-white" /></Button
 				>
 				<Dropdown>
-					{#each data.spots as { name }}
-						<DropdownItem href="/">{name}</DropdownItem>
+					{#each data.spots as { name, id }}
+						<DropdownItem href="/forecast/{id}">{name}</DropdownItem>
 					{/each}
+						<DropdownItem href="/createSpot">Create Spot</DropdownItem>
 				</Dropdown>
 				<div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none" />
 			</div>

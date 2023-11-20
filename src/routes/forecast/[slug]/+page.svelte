@@ -1,9 +1,11 @@
 <script>
+	import { invalidate } from '$app/navigation';
 	import { Chart, Card, A, Button, Dropdown, DropdownItem } from 'flowbite-svelte';
+	import { onMount } from 'svelte';
+	import { writable } from 'svelte/store';
 
 	export let data;
-
-	let options = {
+	$: options = {
 		chart: {
 			height: '400px',
 			maxWidth: '100%',
@@ -47,9 +49,14 @@
 			}
 		},
 		series: [
+			// {
+			// 	name: 'NOAA Swell Height',
+			// 	data: data.traces.swellHeight,
+			// 	color: '#1A56DB'
+			// },
 			{
-				name: 'NOAA Swell Height',
-				data: data.trace,
+				name: 'NOAA Wind Speed',
+				data: data.traces.windSpeed,
 				color: '#1A56DB'
 			}
 		],
@@ -68,13 +75,15 @@
 		yaxis: {
 			show: true
 		}
-	};
+	}
+
+	;
 </script>
 
 <div class="flex justify-between">
 	<div>
 		<h5 class="leading-none text-3xl font-bold text-gray-900 dark:text-white pb-2">
-			Swell Height (La Jolla)
+			Swell Height {data.spot.name}
 		</h5>
 	</div>
 </div>

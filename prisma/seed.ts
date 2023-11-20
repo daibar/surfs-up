@@ -13,12 +13,12 @@ async function main() {
 	});
 
 	const scripps = await prisma.spot.upsert({
-		where: { name: 'Scripps' },
+		where: { name: 'Pipeline' },
 		update: {},
 		create: {
-			name: 'Scripps',
-			latitude: 32.8656048,
-			longitude: -117.256843
+			name: 'Pipeline',
+			latitude: 21.6655525,
+			longitude: -158.05502
 		}
 	});
 
