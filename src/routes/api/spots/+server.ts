@@ -7,3 +7,9 @@ export const GET: RequestHandler = async () => {
     const spots = await prisma.spot.findMany({select: { name: true, id: true} })
     return json({ spots });
 };
+
+export async function POST({ request }) {
+    const req = await request.json()
+    const spot = await prisma.spot.create({ data: {name: req.name, latitude: parseFloat(req.latitude), longitude: parseFloat(req.longitude) }})
+	return json({ spot }, { status: 201 });
+};
