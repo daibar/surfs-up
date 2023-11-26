@@ -75,9 +75,7 @@
 		yaxis: {
 			show: true
 		}
-	}
-
-	;
+	};
 </script>
 
 <div class="flex justify-between">
