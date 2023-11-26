@@ -11,5 +11,7 @@ export const GET: RequestHandler = async () => {
 export async function POST({ request }) {
     const req = await request.json()
     const spot = await prisma.spot.create({ data: {name: req.name, latitude: parseFloat(req.latitude), longitude: parseFloat(req.longitude) }})
+    console.log('New spot saved')
+    console.log(spot)
 	return json({ spot }, { status: 201 });
 };
