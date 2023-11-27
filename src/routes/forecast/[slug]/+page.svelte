@@ -78,10 +78,10 @@
 	};
 </script>
 
-<div class="flex justify-between">
+<div class="flex flex-row-reverse">
 	<div>
-		<h5 class="leading-none text-3xl font-bold text-gray-900 dark:text-white pb-2">
-			Swell Height {data.spot.name}
+		<h5 class="leading-none text-3xl font-bold text-gray-900 dark:text-white pb-2 text-right">
+			{data.spot.name}
 		</h5>
 	</div>
 </div>
